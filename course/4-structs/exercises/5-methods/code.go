@@ -7,7 +7,9 @@ type authenticationInfo struct {
 	password string
 }
 
-// ?
+func (info *authenticationInfo) getBasicAuth() string{
+  return fmt.Sprintf("Authorization: Basic %s:%s", info.username, info.password)
+}
 
 // don't touch below this line
 
