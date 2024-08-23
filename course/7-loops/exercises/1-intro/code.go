@@ -5,7 +5,14 @@ import (
 )
 
 func bulkSend(numMessages int) float64 {
-	// ?
+  totalCost := .0
+
+  for i:=0; i < numMessages; i++ {
+    fee := float64(i) * .01 
+    totalCost += 1.0 + fee
+  }
+
+  return totalCost
 }
 
 // don't edit below this line

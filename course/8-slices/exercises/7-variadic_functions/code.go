@@ -2,8 +2,14 @@ package main
 
 import "fmt"
 
-func sum(nums ...float64) float64 {
-	// ?
+func sum(nums ...float64) (total float64) {
+  total = .0
+
+  for _, num := range nums{
+    total += num
+  }
+
+  return
 }
 
 // don't edit below this line

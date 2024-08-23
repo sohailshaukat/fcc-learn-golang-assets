@@ -6,8 +6,12 @@ import (
 	"io"
 )
 
-func getCounts(userIDs []string) map[string]int {
-	// ?
+func getCounts(userIDs []string) (userIDcounts map[string]int) {
+  userIDcounts = make(map[string]int)
+  for _, userID := range userIDs{
+    userIDcounts[userID] += 1
+  }
+  return userIDcounts
 }
 
 // don't edit below this line

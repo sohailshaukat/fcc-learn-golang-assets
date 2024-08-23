@@ -3,7 +3,16 @@ package main
 import "fmt"
 
 func indexOfFirstBadWord(msg []string, badWords []string) int {
-	// ?
+  badWordsHash := make(map[string]bool)
+  for _, word := range badWords{
+    badWordsHash[word] = true
+  }
+  for i, word := range msg{
+    if badWordsHash[word]{
+      return i
+    }
+  }
+  return -1
 }
 
 // don't touch below this line

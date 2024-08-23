@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+  "errors"
 )
 
 const (
@@ -11,7 +12,14 @@ const (
 
 func getMessageWithRetriesForPlan(plan string) ([]string, error) {
 	allMessages := getMessageWithRetries()
-	// ?
+  switch plan {
+  case planPro:
+    return allMessages[:], nil
+  case planFree:
+    return allMessages[:2], nil
+  default:
+    return []string{}, errors.New("unsupported plan") 
+  }
 }
 
 // don't touch below this line

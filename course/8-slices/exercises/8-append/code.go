@@ -7,8 +7,14 @@ type cost struct {
 	value float64
 }
 
-func getCostsByDay(costs []cost) []float64 {
-	// ?
+func getCostsByDay(costs []cost) (finalCosts []float64) {
+  for _, cost := range costs{
+    for cost.day >= len(finalCosts){
+      finalCosts = append(finalCosts, .0)
+    }
+    finalCosts[cost.day]  += cost.value
+  }
+  return
 }
 
 // dont edit below this line
