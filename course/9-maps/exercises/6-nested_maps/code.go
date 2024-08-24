@@ -8,12 +8,12 @@ func getNameCounts(names []string) map[rune]map[string]int {
   solution := make(map[rune]map[string]int)
 
   for _, name := range names{
-    parentK := name[0]
-    elem, ok := solution[rune(parentK)]
+    parentK := rune(name[0])
+    elem, ok := solution[parentK]
     if ok{
       elem[name]+=1
     }else{
-      solution[rune(parentK)] = map[string]int{name:1}
+      solution[parentK] = map[string]int{name:1}
     }
   }
 
